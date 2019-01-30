@@ -1,0 +1,63 @@
+{
+  "name": "gtfs-rt",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon",
+    "start": "node dist",
+    "tdd": "mocha --opts mocha.opts --reporter min --watch \"./**/*.spec.ts\"",
+    "test": "npm run tslint && NODE_ENV=unit-test nyc mocha --opts mocha.opts",
+    "tslint": "tslint -c tslint.json -p tsconfig.json && tslint -c tslint.json ./**/*.spec.ts"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "config": "^3.0.1",
+    "gtfs-realtime-bindings": "0.0.4",
+    "request": "^2.88.0",
+    "request-promise": "^4.2.2"
+  },
+  "devDependencies": {
+    "@types/chai": "^4.1.7",
+    "@types/config": "0.0.34",
+    "@types/mocha": "^5.2.5",
+    "@types/request-promise": "^4.1.42",
+    "chai": "^4.2.0",
+    "mocha": "^5.2.0",
+    "nodemon": "^1.18.9",
+    "nyc": "^13.1.0",
+    "prettier": "^1.16.2",
+    "sinon": "^7.2.3",
+    "sinon-chai": "^3.3.0",
+    "ts-node": "^8.0.2",
+    "tslint": "^5.12.1",
+    "tslint-config-prettier": "^1.17.0",
+    "typescript": "^3.2.4"
+  },
+  "prettier": {
+    "printWidth": 80,
+    "singleQuote": true,
+    "semi": false
+  },
+  "nyc": {
+    "extension": [
+      ".ts",
+      ".tsx"
+    ],
+    "all": true,
+    "exclude": [
+      "**/*.d.ts",
+      "**/*.spec.ts",
+      "test/**/*",
+      "dist",
+      "coverage"
+    ],
+    "produce-source-map": true,
+    "reporter": [
+      "text",
+      "lcov"
+    ]
+  }
+}

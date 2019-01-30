@@ -1,0 +1,25 @@
+{
+  "compilerOptions": {
+    "module": "commonjs",
+    "target": "es6",
+    "noImplicitAny": true,
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "sourceMap": true,
+    "outDir": "dist",
+    "baseUrl": ".",
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
+    "paths": {
+      "*": ["node_modules/*"]
+    },
+    "types": ["node", "mocha", "chai", "gtfs-realtime-bindings"],
+    "typeRoots": ["./types"]
+  },
+  "include": [
+    "*.ts",
+    "**/*.ts",
+    "node_modules/gtfs-realtime-bindings/gtfs-realtime-bindings.d.ts"
+  ],
+  "exclude": ["*.spec.ts", "**/*.spec.ts"]
+}

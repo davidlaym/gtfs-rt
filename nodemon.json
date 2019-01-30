@@ -1,0 +1,6 @@
+{
+  "exec": "npm run tslint && node --inspect -r ts-node/register .",
+  "ext": "ts",
+  "ignore": ["**/*.spec.ts"],
+  "legacyWatch": true
+}
